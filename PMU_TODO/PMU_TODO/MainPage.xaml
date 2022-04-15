@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="PMU_TODO.MainPage"
+             BackgroundColor="#DFDFE9"
+             >
+
+    <StackLayout Padding="16, 16">
+        <FlexLayout Direction="Row" BackgroundColor="White" 
+                    xct:ShadowEffect.Color="#A3B1C6"
+                    xct:ShadowEffect.OffsetX="4"
+                    xct:ShadowEffect.OffsetY="4"
+                    xct:ShadowEffect.Opacity="50"
+                    xct:ShadowEffect.Radius="24"
+                    
+                    xct:CornerRadiusEffect.CornerRadius="12"
+                    Padding="8, 8"
+                    
+                    AlignItems="Center"
+                    >
+            <CheckBox Color="#5700F7" WidthRequest="64"></CheckBox>
+            <Label TextColor="#5700F7" Text="Диалоги тет а тет до утра за жили были от нее секретов нет избавляемся от пыли я дышу ее душой она дышит моим сердцем"></Label>
+        </FlexLayout>
+        <CollectionView>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <FlexLayout Direction="Row">
+                        <CheckBox></CheckBox>
+                        <Label Text="LOL"></Label>
+                    </FlexLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Entry PlaceholderColor="#5700F7">
+            
+        </Entry>
+    </StackLayout>
+
+</ContentPage>
