@@ -94,6 +94,11 @@ namespace PMU_TODO
                 Tasks.Add(new TaskItem { Text = text });
                 EntryText = "";
             });
+
+            RemoveTask = new Command<TaskItem>((task) =>
+            {
+                Tasks.Remove(task);
+            });
         }
 
 
@@ -105,6 +110,7 @@ namespace PMU_TODO
         }
 
         public ICommand AddTask { protected set; get; }
+        public ICommand RemoveTask { protected set; get; }
     }
 
 }

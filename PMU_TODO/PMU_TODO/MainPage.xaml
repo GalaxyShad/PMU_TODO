@@ -13,14 +13,30 @@
                 <DataTemplate x:DataType="{x:Type todoApp:TaskItem}" >
                     <ContentView >
                         <StackLayout Margin="0, 4" >
-                            <FlexLayout Direction="Row" BackgroundColor="White" 
+                            <Grid ColumnDefinitions="Auto, *, Auto" 
+                                ColumnSpacing="4"
                                 xct:CornerRadiusEffect.CornerRadius="12"
-
-                                Padding="8, 8"
-                                AlignItems="Center">
-                                <CheckBox IsChecked="{Binding IsDone}" Color="#5700F7"></CheckBox>
-                                <Editor AutoSize="TextChanges" Text="{Binding Text}" TextColor="#5700F7"></Editor>
-                            </FlexLayout>
+                                BackgroundColor="White"
+                                Padding="8, 8">
+                                <CheckBox IsChecked="{Binding IsDone}" 
+                                          Color="#5700F7"
+                                          Grid.Column="0">
+                                    
+                                </CheckBox>
+                                <Editor FlexLayout.Grow="1" 
+                                        AutoSize="TextChanges" 
+                                        Text="{Binding Text}" 
+                                        TextColor="#5700F7"
+                                        Grid.Column="1">
+                                </Editor>
+                                <Button 
+                                        ImageSource="icoTrash.png" 
+                                        WidthRequest="48"
+                                        Command="{Binding RemoveTask, Source={RelativeSource AncestorType={x:Type todoApp:MainPageViewModel}}}"
+                                        CommandParameter="{Binding }"
+                                        Grid.Column="2">
+                                </Button>
+                            </Grid>
                         </StackLayout>
                     </ContentView>
                 </DataTemplate>
@@ -32,7 +48,6 @@
                ReturnCommand="{Binding AddTask}"
                ReturnCommandParameter="{Binding EntryText}"
                >
-            
         </Entry>
     </StackLayout>
 
