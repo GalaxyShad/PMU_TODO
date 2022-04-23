@@ -91,8 +91,11 @@ namespace PMU_TODO
         {
             AddTask = new Command<string>((text) =>
             {
-                Tasks.Add(new TaskItem { Text = text });
-                EntryText = "";
+                if (!String.IsNullOrWhiteSpace(text))
+                {
+                    Tasks.Add(new TaskItem { Text = text.TrimStart()});
+                    EntryText = "";
+                }
             });
 
             RemoveTask = new Command<TaskItem>((task) =>
